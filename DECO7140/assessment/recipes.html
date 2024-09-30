@@ -11,6 +11,12 @@ scale=1.0" />
     <link rel="stylesheet" href="css/components.css">
     <link rel="stylesheet" href="css/layout.css">
     <link rel="stylesheet" href="css/recipes.css">
+    <!-- Font:Montserrat -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+        rel="stylesheet">
 </head>
 
 <body>
@@ -33,16 +39,16 @@ scale=1.0" />
         <form action="#" method="post">
             <label for="recipeName">Name of the recipe:</label>
             <input type="text" id="recipeName" name="recipeName" required minlength="3" maxlength="100">
-        
+
             <label for="ingredients">ingredients:</label>
             <textarea id="ingredients" name="ingredients" required minlength="10" rows="4"></textarea>
-        
+
             <label for="steps">steps:</label>
             <textarea id="steps" name="steps" required minlength="10" rows="6"></textarea>
-        
+
             <label for="cookingTime">cooking time (minutes):</label>
             <input type="number" id="cookingTime" name="cookingTime" required min="1" max="300">
-        
+
             <label for="difficulty">difficulty level:</label>
             <select id="difficulty" name="difficulty" required>
                 <option value="">Please select the difficulty level</option>
@@ -50,7 +56,7 @@ scale=1.0" />
                 <option value="medium">medium</option>
                 <option value="hard">hard</option>
             </select>
-        
+
             <label for="category">category:</label>
             <select id="category" name="category" required>
                 <option value="">Please select a category</option>
@@ -59,10 +65,11 @@ scale=1.0" />
                 <option value="dinner">dinner</option>
                 <option value="dessert">dessert</option>
             </select>
-        
-            <input type="submit" value="submit">
+
+            <div class="submit-button"><button type="submit" value="submit">submit</button></div>
+
         </form>
-        
+
     </main>
     <footer>
         <p>&copy; Cooking All rights reserved.</p>
