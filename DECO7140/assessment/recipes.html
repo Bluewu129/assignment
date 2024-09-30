@@ -31,36 +31,36 @@ scale=1.0" />
         <p><a href="index.html">Home</a></p>
         <h2>Recipes</h2>
         <form action="#" method="post">
-            <label for="recipeName">食谱名称:</label>
+            <label for="recipeName">Name of the recipe:</label>
             <input type="text" id="recipeName" name="recipeName" required minlength="3" maxlength="100">
         
-            <label for="ingredients">食材:</label>
+            <label for="ingredients">ingredients:</label>
             <textarea id="ingredients" name="ingredients" required minlength="10" rows="4"></textarea>
         
-            <label for="steps">步骤:</label>
+            <label for="steps">steps:</label>
             <textarea id="steps" name="steps" required minlength="10" rows="6"></textarea>
         
-            <label for="cookingTime">烹饪时间 (分钟):</label>
+            <label for="cookingTime">cooking time (minutes):</label>
             <input type="number" id="cookingTime" name="cookingTime" required min="1" max="300">
         
-            <label for="difficulty">难度级别:</label>
+            <label for="difficulty">difficulty level:</label>
             <select id="difficulty" name="difficulty" required>
-                <option value="">请选择难度</option>
-                <option value="easy">简单</option>
-                <option value="medium">中等</option>
-                <option value="hard">困难</option>
+                <option value="">Please select the difficulty level</option>
+                <option value="easy">easy</option>
+                <option value="medium">medium</option>
+                <option value="hard">hard</option>
             </select>
         
-            <label for="category">类别:</label>
+            <label for="category">category:</label>
             <select id="category" name="category" required>
-                <option value="">请选择类别</option>
-                <option value="breakfast">早餐</option>
-                <option value="lunch">午餐</option>
-                <option value="dinner">晚餐</option>
-                <option value="dessert">甜点</option>
+                <option value="">Please select a category</option>
+                <option value="breakfast">breakfast</option>
+                <option value="lunch">lunch</option>
+                <option value="dinner">dinner</option>
+                <option value="dessert">dessert</option>
             </select>
         
-            <input type="submit" value="提交食谱">
+            <input type="submit" value="submit">
         </form>
         
     </main>
