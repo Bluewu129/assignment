@@ -4,8 +4,8 @@
 */
 
 :root {
-    --primary: #348888;
-    --secondary: #2ABABB;
+    --primary: white;
+    --secondary: #6D4C41;
     --light: #9EF8EE;
     --action: #FA7F08;
     --danger: #F24405;
@@ -73,7 +73,7 @@ a {
 }
 
 header {
-    background-color: #6D4C41!important;
+    background-color: var(--secondary);
     color: #F2F2F2;
     padding: 10px 20px;
     text-align: center;
@@ -98,7 +98,7 @@ nav ul li a {
 
 
 footer {
-    background-color: #6D4C41;
+    background-color: var(--secondary);
     color: #F2F2F2;
     text-align: center;
     padding: 10px;
