@@ -1,20 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-
 scale=1.0" />
-<title>Cooking</title>
+    <title>Cooking</title>
+    <link rel="stylesheet" href="css/css_reset.css">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/recipes.css">
 </head>
+
 <body>
-<header>
-<h1>Recipes</h1>
-</header>
-<main>
-<p><a href="index.html">Home</a></p>
-</main>
-<footer>
-<p>&copy; Cooking All rights reserved.</p>
-</footer>
+    <header>
+        <h1>Cooking</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="community.html">Community</a></li>
+                <li><a href="cooking_tips.html">Cooking Tips</a></li>
+                <li><a href="recipes.html">Recipes</a></li>
+                <li><a href="user_profile.html">User Profile</a></li>
+            </ul>
+
+        </nav>
+    </header>
+    <main>
+        <p><a href="index.html">Home</a></p>
+        <h2>Recipes</h2>
+        <form action="#" method="post">
+            <label for="recipeName">食谱名称:</label>
+            <input type="text" id="recipeName" name="recipeName" required minlength="3" maxlength="100">
+        
+            <label for="ingredients">食材:</label>
+            <textarea id="ingredients" name="ingredients" required minlength="10" rows="4"></textarea>
+        
+            <label for="steps">步骤:</label>
+            <textarea id="steps" name="steps" required minlength="10" rows="6"></textarea>
+        
+            <label for="cookingTime">烹饪时间 (分钟):</label>
+            <input type="number" id="cookingTime" name="cookingTime" required min="1" max="300">
+        
+            <label for="difficulty">难度级别:</label>
+            <select id="difficulty" name="difficulty" required>
+                <option value="">请选择难度</option>
+                <option value="easy">简单</option>
+                <option value="medium">中等</option>
+                <option value="hard">困难</option>
+            </select>
+        
+            <label for="category">类别:</label>
+            <select id="category" name="category" required>
+                <option value="">请选择类别</option>
+                <option value="breakfast">早餐</option>
+                <option value="lunch">午餐</option>
+                <option value="dinner">晚餐</option>
+                <option value="dessert">甜点</option>
+            </select>
+        
+            <input type="submit" value="提交食谱">
+        </form>
+        
+    </main>
+    <footer>
+        <p>&copy; Cooking All rights reserved.</p>
+    </footer>
 </body>
+
 </html>
