@@ -20,22 +20,118 @@ scale=1.0" />
 </head>
 
 <body>
-    <header>
-        <h1>Cooking</h1>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="community.html">Community</a></li>
-                <li><a href="cooking_tips.html">Cooking Tips</a></li>
-                <li><a href="recipes.html">Recipes</a></li>
-                <li><a href="user_profile.html">User Profile</a></li>
-            </ul>
+    <nav class="home-navbar-light">
+        <div class="header-logo">
+            <img src="img/logo.png" alt="Logo">
+        </div>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="recipes.html">Recipes</a></li>
+            <li><a href="cooking_tips.html">Cooking Tips</a></li>
+            <li><a href="community.html">Community</a></li>
+            <li><a href="user_profile.html">User Profile</a></li>
+        </ul>
+    </nav>
 
-        </nav>
-    </header>
-    <main>
-        <p><a href="index.html">Home</a></p>
-        <h2>Recipes</h2>
+    <section class="cooking-section">
+        <div class="container">
+            <div class="row">
+                <h2 class="text-center display-2">Today's Recipes</h2>
+                <div class="row justify-content-center">
+                    <div class="col-md-7">
+                        <p class="lead">Welcome to the Recipe Hub, your central hub for browsing recipes. We categorize
+                            recipes by cuisine type, cooking difficulty, and dietary preferences to help you easily find
+                            the perfect recipe for your needs.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-md-12 text-center">
+                    <!-- <div class="title-div">Breakfast</div> -->
+                    <div class="text-left" style="margin-top:60px;">
+                        <div class="recipes-list">
+                            <div class="col-md-6">
+                                <div class="media recipes-item">
+                                    <img class="mr-3" src="img/recipes_1.jpg" class="img-fluid"
+                                        alt="PanSeared Salmon with Quinoa Salad">
+                                    <div class="media-body">
+                                        <h5 class="mt-0">PanSeared Salmon with Quinoa Salad</h5>
+                                        <p>
+                                            Dish Type: Main Course<br>
+                                            Dietary Preference: HighProtein, GlutenFree<br>
+                                            Cooking Difficulty: Medium<br>
+                                            Ingredients
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <div class="media recipes-item">
+                                    <img class="mr-3" src="img/recipes_2.jpg" class="img-fluid"
+                                        alt="Handmade Italian Pizza">
+                                    <div class="media-body">
+                                        <h5 class="mt-0">Handmade Italian Pizza</h5>
+                                        <p> Dish Type: Main Course<br>
+                                            Dietary Preference: Vegetarian (Adjustable as needed)<br>
+                                            Cooking Difficulty: Hard<br></p>
+                                    </div>
+                                </div>
+
+                                <div class="media recipes-item">
+                                    <img class="mr-3" src="img/recipes_3.jpg" class="img-fluid" alt="Braised Beef">
+                                    <div class="media-body">
+                                        <h5 class="mt-0">Braised Beef</h5>
+                                        <p>Dish Type: Main Course<br>
+                                            Dietary Preference: No Special Dietary Restrictions<br>
+                                            Cooking Difficulty: Medium<br></p>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="col-md-6">
+                                <div class="media recipes-item">
+                                    <img class="mr-3" src="img/recipes_4.jpg" class="img-fluid"
+                                        alt="French Dessert — MilleFeuille">
+                                    <div class="media-body">
+                                        <h5 class="mt-0">French Dessert — MilleFeuille</h5>
+                                        <p>
+                                            Dish Type: Dessert<br>
+                                            Dietary Preference: Vegetarian (Can choose not to use animal butter)<br>
+                                            Cooking Difficulty: Hard<br>
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <div class="media recipes-item">
+                                    <img class="mr-3" src="img/recipes_5.jpg" class="img-fluid" alt="Bruschetta">
+                                    <div class="media-body">
+                                        <h5 class="mt-0">Bruschetta</h5>
+                                        <p> Dish Type: Appetizer<br>
+                                            Dietary Preference: Vegetarian (Adjustable as needed)<br>
+                                            Cooking Difficulty: Easy<br></p>
+                                    </div>
+                                </div>
+
+                                <div class="media recipes-item">
+                                    <img class="mr-3" src="img/recipes_6.jpg" class="img-fluid"
+                                        alt="Whiskey Sour                                    ">
+                                    <div class="media-body">
+                                        <h5 class="mt-0">Whiskey Sour</h5>
+                                        <p> Dish Type: Beverage (Cocktail)
+                                            Dietary Preference: Alcoholic Beverage
+                                            Cooking Difficulty: Medium
+                                            <br>
+                                        </p>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section>
         <form action="#" method="post">
             <label for="recipeName">Name of the recipe:</label>
             <input type="text" id="recipeName" name="recipeName" required minlength="3" maxlength="100">
@@ -68,8 +164,8 @@ scale=1.0" />
 
             <div><input type="submit" value="submit"></input></div>
         </form>
+    </section>
 
-    </main>
     <footer>
         <p>&copy; Cooking All rights reserved.</p>
     </footer>
