@@ -3,10 +3,10 @@
     background-color: var(--action);
     border: none;
     border-radius: 50px;
-    color:white;
+    /* color:white; */
     font-size: 16px;
     cursor: pointer;
 }
 .btn-action:hover {
-    background-color: var(--primary);
+    /* background-color: var(--primary); */
 }
