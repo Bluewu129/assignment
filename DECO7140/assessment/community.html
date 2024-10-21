@@ -17,6 +17,7 @@ scale=1.0" />
     <link
         href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
         rel="stylesheet">
+    <script type="module" src="js/community.js"></script>
 </head>
 
 <body>
@@ -34,81 +35,121 @@ scale=1.0" />
     </nav>
     <section class="cooking-section">
         <div class="container">
-            <div class="post">
-                <img src="img/img_avatar.png" alt="User 头像" class="avatar">
-                <div class="content">
-                    <div class="username">User 1</div>
-                    <div class="timestamp">2023-10-01 12:34</div>
-                    <div class="message">
-                        <p>Tried making spaghetti today, it turned out great!</p>
+            <h3 id="recipes-container-heading"></h3>
+            <div id="recipes-container" role="region" aria-labelledby="recipes-container-heading" aria-live="polite">
+                <!-- <div class="post">
+                    <img src="img/img_avatar.png" alt="User avatar" class="avatar">
+                    <div class="content">
+                        <div class="username">User 1</div>
+                        <div class="timestamp">2023-10-01 12:34</div>
+                        <div class="message">
+                            <p>Tried making spaghetti today, it turned out great!</p>
+                        </div>
                     </div>
                 </div>
-            </div>
 
-            <div class="post">
-                <img src="img/img_avatar.png" alt="User 头像" class="avatar">
-                <div class="content">
-                    <div class="username">User 2</div>
-                    <div class="timestamp">2023-10-01 13:45</div>
-                    <div class="message">
-                        <p>I'm learning to make sushi recently, any tips to recommend?</p>
+                <div class="post">
+                    <img src="img/img_avatar.png" alt="User avatar" class="avatar">
+                    <div class="content">
+                        <div class="username">User 2</div>
+                        <div class="timestamp">2023-10-01 13:45</div>
+                        <div class="message">
+                            <p>I'm learning to make sushi recently, any tips to recommend?</p>
+                        </div>
                     </div>
                 </div>
-            </div>
 
-            <div class="post">
-                <img src="img/img_avatar.png" alt="User 头像" class="avatar">
-                <div class="content">
-                    <div class="username">User 3</div>
-                    <div class="timestamp">2023-10-01 14:56</div>
-                    <div class="message">
-                        <p>Recommend a simple dessert recipe: Chocolate Mousse.</p>
+                <div class="post">
+                    <img src="img/img_avatar.png" alt="User avatar" class="avatar">
+                    <div class="content">
+                        <div class="username">User 3</div>
+                        <div class="timestamp">2023-10-01 14:56</div>
+                        <div class="message">
+                            <p>Recommend a simple dessert recipe: Chocolate Mousse.</p>
+                        </div>
                     </div>
                 </div>
-            </div>
 
-            <div class="post">
-                <img src="img/img_avatar.png" alt="User 头像" class="avatar">
-                <div class="content">
-                    <div class="username">User 4</div>
-                    <div class="timestamp">2023-10-01 15:12</div>
-                    <div class="message">
-                        <p>I just baked an apple pie, it tastes amazing!</p>
+                <div class="post">
+                    <img src="img/img_avatar.png" alt="User avatar" class="avatar">
+                    <div class="content">
+                        <div class="username">User 4</div>
+                        <div class="timestamp">2023-10-01 15:12</div>
+                        <div class="message">
+                            <p>I just baked an apple pie, it tastes amazing!</p>
+                        </div>
                     </div>
                 </div>
-            </div>
 
-            <div class="post">
-                <img src="img/img_avatar.png" alt="User 头像" class="avatar">
-                <div class="content">
-                    <div class="username">User 5</div>
-                    <div class="timestamp">2023-10-01 16:23</div>
-                    <div class="message">
-                        <p>Has anyone tried making chicken wings in an air fryer? How was it?</p>
+                <div class="post">
+                    <img src="img/img_avatar.png" alt="User avatar" class="avatar">
+                    <div class="content">
+                        <div class="username">User 5</div>
+                        <div class="timestamp">2023-10-01 16:23</div>
+                        <div class="message">
+                            <p>Has anyone tried making chicken wings in an air fryer? How was it?</p>
+                        </div>
                     </div>
-                </div>
+                </div> -->
             </div>
-            <button id="getRequestButton">Send GET Request</button>
-            <div id="response"></div>
         </div>
     </section>
 
+
     <section>
-        <form action="#" method="post">
+        <!-- <form action="#" id="recipeForm" method="post">
+            <label for="recipe_name">Recipe Name:</label>
+            <input type="text" id="recipe_name" name="recipe_name" required maxlength="255">
+
+            <label for="author">Author:</label>
+            <input type="text" id="author" name="author" maxlength="255" required>
+
+            <label for="dish_type">Dish Type:</label>
+            <input type="text" id="dish_type" name="dish_type" required maxlength="255">
+
+            <label for="dietary_preference">Dietary Preference:</label>
+            <input type="text" id="dietary_preference" name="dietary_preference" required maxlength="255">
+
+            <label for="difficulty">difficulty level:</label>
+            <select id="difficulty" name="difficulty" required>
+                <option value="">Please select the difficulty level</option>
+                <option value="Easy">easy</option>
+                <option value="Medium">medium</option>
+                <option value="Hard">hard</option>
+            </select>
+
+            <div id="ingredients-container" class="mt-2">
+                <label>Ingredients:</label>
+                <div class="ingredient-group">
+                    <input type="text" class="ingredient-name" placeholder="Ingredient Name" required>
+                    <input type="text" class="ingredient-quantity" placeholder="Quantity" required>
+                    <button type="button" class="remove-ingredient-btn">Remove</button>
+                </div>
+            </div>
+            <button type="button" id="add-ingredient-btn">Add Another Ingredient</button>
+            <label for="instructions" class="mt-2">Instructions:</label>
+            <textarea id="instructions" name="instructions" rows="4" required></textarea>
+            <label for="image" class="mt-2">Recipe Image (optional):</label>
+            <input type="file" id="image" name="image">
+
+            <button type="submit" class="btn btn-action">Submit Recipe</button>
+            <div id="submitResponse" class="mt-2" role="alert" aria-live="assertive"></div>
+        </form> -->
+        <form id="recipeForm" method="post">
             <label for="recipe_name">Recipe Name:</label>
             <input type="text" id="recipe_name" name="recipe_name" required maxlength="225">
 
             <!-- Author -->
             <label for="author">Author:</label>
             <input type="text" id="author" name="author" maxlength="255" required>
-            
+
             <!-- Cooking Time -->
-            <label for="cookingTime">Cooking Time (minutes):</label>
-            <input type="number" id="cookingTime" name="cookingTime" required max="300">
+            <label for="cooking_time">Cooking Time (minutes):</label>
+            <input type="number" id="cooking_time" name="cooking_time" required max="300">
 
             <!-- Servings -->
             <label for="servings">Servings:</label>
-            <input type="number" id="servings" name="servings" required>
+            <input type="number" id="servings" name="servings" min="1" max="50" required>
 
             <!-- Difficulty Level -->
             <label for="difficulty">difficulty level:</label>
@@ -123,8 +164,7 @@ scale=1.0" />
             <div id="ingredients-container" class="mt-2">
                 <label>Ingredients:</label>
                 <div class="ingredient-group">
-                    <input type="text" class="ingredient-name" placeholder="Ingredient Name" 
-            required>
+                    <input type="text" class="ingredient-name" placeholder="Ingredient Name" required>
                     <input type="text" class="ingredient-quantity" placeholder="Quantity" required>
                     <button type="button" class="remove-ingredient-btn">Remove</button>
                 </div>
@@ -135,7 +175,7 @@ scale=1.0" />
             <textarea id="instructions" name="instructions" rows="4" required></textarea>
             <label for="image" class="mt-2">Recipe Image (optional):</label>
             <input type="file" id="image" name="image">
-             
+
             <button type="submit" class="btn btn-action">Submit Recipe</button>
             <div id="submitResponse" class="mt-2" role="alert" aria-live="assertive"></div>
         </form>
@@ -145,7 +185,6 @@ scale=1.0" />
     <footer>
         <p>&copy; Cooking All rights reserved.</p>
     </footer>
-    <script src="js/community.js"></script>
 
 </body>
 
