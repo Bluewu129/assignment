@@ -95,16 +95,22 @@ scale=1.0" />
 
     <section>
         <form action="#" method="post">
-            <label for="recipeName">Name of the recipe:</label>
-            <input type="text" id="recipeName" name="recipeName" required minlength="3" maxlength="100">
+            <label for="recipe_name">Recipe Name:</label>
+            <input type="text" id="recipe_name" name="recipe_name" required maxlength="225">
 
-            <label for="ingredients">ingredients:</label>
-            <textarea id="ingredients" name="ingredients" required minlength="10" rows="4"></textarea>
+            <!-- Author -->
+            <label for="author">Author:</label>
+            <input type="text" id="author" name="author" maxlength="255" required>
+            
+            <!-- Cooking Time -->
+            <label for="cookingTime">Cooking Time (minutes):</label>
+            <input type="number" id="cookingTime" name="cookingTime" required max="300">
 
+            <!-- Servings -->
+            <label for="servings">Servings:</label>
+            <input type="number" id="servings" name="servings" required>
 
-            <label for="cookingTime">cooking time (minutes):</label>
-            <input type="number" id="cookingTime" name="cookingTime" required min="1" max="300">
-
+            <!-- Difficulty Level -->
             <label for="difficulty">difficulty level:</label>
             <select id="difficulty" name="difficulty" required>
                 <option value="">Please select the difficulty level</option>
@@ -113,16 +119,25 @@ scale=1.0" />
                 <option value="hard">hard</option>
             </select>
 
-            <label for="category">category:</label>
-            <select id="category" name="category" required>
-                <option value="">Please select a category</option>
-                <option value="breakfast">breakfast</option>
-                <option value="lunch">lunch</option>
-                <option value="dinner">dinner</option>
-                <option value="dessert">dessert</option>
-            </select>
-
-            <div><input type="submit" value="submit"></input></div>
+            <!-- Ingredients fields -->
+            <div id="ingredients-container" class="mt-2">
+                <label>Ingredients:</label>
+                <div class="ingredient-group">
+                    <input type="text" class="ingredient-name" placeholder="Ingredient Name" 
+            required>
+                    <input type="text" class="ingredient-quantity" placeholder="Quantity" required>
+                    <button type="button" class="remove-ingredient-btn">Remove</button>
+                </div>
+            </div>
+            <button type="button" id="add-ingredient-btn">Add Another Ingredient</button>
+            <!-- instructions -->
+            <label for="instructions" class="mt-2">Instructions:</label>
+            <textarea id="instructions" name="instructions" rows="4" required></textarea>
+            <label for="image" class="mt-2">Recipe Image (optional):</label>
+            <input type="file" id="image" name="image">
+             
+            <button type="submit" class="btn btn-action">Submit Recipe</button>
+            <div id="submitResponse" class="mt-2" role="alert" aria-live="assertive"></div>
         </form>
     </section>
 
@@ -130,40 +145,8 @@ scale=1.0" />
     <footer>
         <p>&copy; Cooking All rights reserved.</p>
     </footer>
-    <script>
-        // Set up the headers for student authentication
-        const myHeaders = new Headers();
-        myHeaders.append("student_number", "s4816737"); // Replace with actual student number
-        myHeaders.append("uqcloud_zone_id", "e11123c8"); // Replace with actual zone ID
-        // Request options for the GET request
-        const requestOptions = { method: "GET", headers: myHeaders, redirect: "follow" };
-        // Fetch data from the Generic Subscriber API
-        fetch("https://damp-castle-86239-1b70ee448fbd.herokuapp.com/decoapi/genericsubscriber/", requestOptions)
-            .then(response => response.json())
-            // Parse the JSON response
-            .then(data => {
-                console.log(data); // Log the data for debugging
-                // Example: Display the subscribers on a webpage
-                let output = ""; data.forEach(subscriber => {
-                    output += ` 
- <div class="subscriber"> 
- <h3>${subscriber.name}</h3> 
- ${subscriber.subscriber_image ? `<img src="${subscriber.subscriber_image}" alt="Image of 
-${subscriber.name}">` : ""}
- <p>Social Media 1: <a href="${subscriber.social_media_1}" 
-target="_blank">${subscriber.social_media_1}</a></p> 
- <p>Description: ${subscriber.social_media_1_description}</p> 
- <p>Social Media 2: <a href="${subscriber.social_media_2}"
-target="_blank">${subscriber.social_media_2}</a></p> 
- <p>Description: ${subscriber.social_media_2_description}</p> 
- <p>Social Media 3: <a href="${subscriber.social_media_3}" 
-target="_blank">${subscriber.social_media_3}</a></p> 
- <p>Description: ${subscriber.social_media_3_description}</p> </div> `;
-                });
-                document.getElementById('subscriber-list').innerHTML = output;
-            })
-            .catch(error => console.error('Error:', error)); // Handle any errors
-    </script>
+    <script src="js/community.js"></script>
+
 </body>
 
 </html>
